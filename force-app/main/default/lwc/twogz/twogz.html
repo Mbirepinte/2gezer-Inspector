@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <div class="header">
+            <img src="" alt="2gezer"/>
+            <h1>2gezer Inspector</h1>
+        </div>
+        
+        
+    <div class="slds-var-m-around_medium">
+        <lightning-record-view-form
+        object-api-name={objectApiName}
+        record-id={recordId}
+        >
+        <lightning-output-field
+        field-name="AccountId"
+        ></lightning-output-field>
+        <lightning-output-field
+        field-name="Name"
+        ></lightning-output-field>
+        <lightning-output-field
+        field-name="Title"
+        ></lightning-output-field>
+        <lightning-output-field
+        field-name="Phone"
+        ></lightning-output-field>
+        <lightning-output-field
+        field-name="Email"
+        ></lightning-output-field>
+    </lightning-record-view-form>
+</div>
+</lightning-card>
+</template>
