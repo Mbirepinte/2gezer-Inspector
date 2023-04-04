@@ -3,37 +3,22 @@
         <div class="header">
             <h1>2gezer Inspector</h1>
         </div>
-        
-        
-    <div class="slds-var-m-around_medium">
-<!--         <lightning-record-view-form
-        object-api-name={objectApiName}
-        record-id={recordId}
-        >
-        <lightning-output-field
-        field-name="AccountId"
-        ></lightning-output-field>
-        <lightning-output-field
-        field-name="Name"
-        ></lightning-output-field>
-        <lightning-output-field
-        field-name="Title"
-        ></lightning-output-field>
-        <lightning-output-field
-        field-name="Phone"
-        ></lightning-output-field>
-        <lightning-output-field
-        field-name="Email"
-        ></lightning-output-field>
-    </lightning-record-view-form> -->
-    <h1>
-       Date: {date}
-    </h1>
-     <h1>
-    Time: {time}
-     </h1>
-     <h1>id: {id}</h1>
-        
-</div>
-</lightning-card>
+        <div class="editForm">
+            <lightning-record-edit-form
+            onload={handleLoad}
+            record-id={recordId}
+            object-api-name={objectApiName}
+            >
+            <lightning-messages></lightning-messages>
+            <lightning-input-field 
+            field-name="Name">
+             </lightning-input-field>
+              </lightning-record-edit-form>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <h1> Date: {date}</h1>
+            <h1> object: {object} </h1>
+            <h1>Layout id : {layout}</h1>
+            </div>
+    </lightning-card>
 </template>
