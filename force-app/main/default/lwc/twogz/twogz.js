@@ -1,21 +1,23 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
+import getLayoutFullName from '@salesforce/apex/LayoutHelper.getLayoutFullName';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 export default class Twogz extends LightningElement {
     error;
     data;
     id;
     date;
-    hour;
     record;
     object;
     objectApiName;
     layout;
+    layoutFullName;
     
+    //Récupère le layout id au chargement du composant
     handleLoad(event) {
-        console.log("detail", event.detail);
+/*         console.log("detail", event.detail);
         console.log('Layout => ', event.detail.layouts);
-        console.log('test',Object.keys(event.detail.layoutUserStates)[0]);
+        console.log('test',Object.keys(event.detail.layoutUserStates)[0]); */
         this.layout=Object.keys(event.detail.layoutUserStates)[0];
     };
 
@@ -36,5 +38,16 @@ export default class Twogz extends LightningElement {
             this.data = undefined;
         }
     }
-    
+    @wire(getLayoutFullName, { layoutId: '$layout' })
+    wiredLayout({ error, data }) {
+        console.log('LayoutId', this.layout)
+        console.log('LayoutFullName', data);
+        if (data) {
+            this.layoutFullName = data;
+            this.error = undefined;
+        } else if (error) {
+            this.error = error;
+            this.layoutFullName = undefined;
+        }
+    }
 }
