@@ -1,26 +1,40 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
+import Id from '@salesforce/user/Id';
 import getLayoutFullName from '@salesforce/apex/LayoutHelper.getLayoutFullName';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
+
 export default class Twogz extends LightningElement {
     error;
     data;
-    id;
+    userId;
     date;
     record;
     object;
     objectApiName;
-    layout;
+    layoutId;
     layoutFullName;
-    
-    //Récupère le layout id au chargement du composant
-    handleLoad(event) {
-/*         console.log("detail", event.detail);
-        console.log('Layout => ', event.detail.layouts);
-        console.log('test',Object.keys(event.detail.layoutUserStates)[0]); */
-        this.layout=Object.keys(event.detail.layoutUserStates)[0];
-    };
 
+    
+    handleLoad(event) {
+        event.preventDefault();
+        console.log(event.detail, 'event');
+        this.layoutId=Object.keys(event.detail.layoutUserStates)[0];
+        this.userId = Id;
+        this.object=Object.keys(event.detail.layouts)[0];
+       getLayoutFullName({layoutId: this.layoutId})
+        .then(result => 
+          {this.layoutFullName = result
+            this.error = undefined}) 
+        .catch (error => {this.error = error
+            this.layoutFullName = undefined})
+        .finally(() => {console.log(this.layoutFullName, 'layoutFullName')});
+      /*   console.log(this.layoutFullName, 'layoutFullName');
+        console.log(this.error, 'error');  */
+        console.log(this.userId, 'id');
+        console.log(this.object , 'object');
+    };
+    
     @api recordId;
     @api objectApiName;
     @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
@@ -38,16 +52,21 @@ export default class Twogz extends LightningElement {
             this.data = undefined;
         }
     }
-    @wire(getLayoutFullName, { layoutId: '$layout' })
+
+
+
+    /*      @wire(getLayoutFullName, { layoutId: '$layoutId' })
     wiredLayout({ error, data }) {
-        console.log('LayoutId', this.layout)
+        console.log('LayoutId', this.layoutId)
         console.log('LayoutFullName', data);
         if (data) {
             this.layoutFullName = data;
             this.error = undefined;
+
         } else if (error) {
             this.error = error;
-            this.layoutFullName = undefined;
+            this.layoutFullName = error;
         }
-    }
+    }   */
+
 }
