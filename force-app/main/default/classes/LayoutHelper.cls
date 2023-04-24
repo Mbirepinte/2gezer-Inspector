@@ -1,7 +1,5 @@
-
 public with sharing class LayoutHelper {
 
-   
      public static String getCredential () {
 
         HttpRequest request = new HttpRequest();
@@ -25,14 +23,12 @@ public with sharing class LayoutHelper {
         return accessToken;
         } 
 
-
     @AuraEnabled
-    public static String getLayoutFullName(String layoutId) {
-        System.debug('getLayoutFullName' + layoutId);
+    public static String getLayoutFullName(String layoutId, String userId, String object_c) {
         String layoutFullName;
         String UserApiVersion ='57.0';
         String query ='/tooling/sobjects/Layout/';
-
+        
         HttpRequest request = new HttpRequest();
         request.setEndpoint(URL.getSalesforceBaseUrl().toExternalForm()
         + '/services/data/v' 
@@ -50,21 +46,15 @@ public with sharing class LayoutHelper {
         if (response.getStatusCode() == 200) {
             Map<String, Object> layoutInfo = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
             layoutFullName = (String) layoutInfo.get('FullName');
-            } else {
-                layoutFullName =  request.toString()  + response.toString();
+        } else {
+            layoutFullName =  request.toString()  + response.toString();
             }  
-           loggerutils.insertInLog(layoutFullName);
-        return layoutFullName;
+          System.debug('getLayoutFullName  ' + layoutFullName);
+          System.debug('getUserId_c  ' + userId);
+          System.debug('getObject_c  ' + object_c);
+          LogHelper.insertInLog(layoutFullName, userId, object_c);
+          return layoutFullName;
+        }   
+        
     }
     
-    public static void  insertInLog (String layoutFullName) {
-        try {
-            InspectorLog__c log = new InspectorLog__c();
-            log.LayoutFullName__c = layoutFullName;
-            insert log;
-        } catch (DMLException e) {
-            System.debug('Error: ' + e.getMessage());
-        }
-    }
-
-}
