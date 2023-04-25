@@ -2,6 +2,7 @@ import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import Id from '@salesforce/user/Id';
 import getLayoutFullName from '@salesforce/apex/LayoutHelper.getLayoutFullName';
+import insertInLog from '@salesforce/apex/LogHelper.insertInLog';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 
 export default class Twogz extends LightningElement {
@@ -14,22 +15,28 @@ export default class Twogz extends LightningElement {
     
     handleLoad(event) {
         event.preventDefault();
-        /* console.log(event.detail, 'event');
-        console.log(Object.keys(event.detail.layouts)[0], 'layouts'); */
         this.layoutId=Object.keys(event.detail.layoutUserStates)[0];
         this.layoutObject=Object.keys(event.detail.layouts)[0];
         this.user_Id = Id;
-        getLayoutFullName({layoutId: this.layoutId,userId: this.user_Id, object_c: this.layoutObject})
-            .then(result => { 
-                this.layoutFullName = result
-                this.error = undefined
-            .catch (error => {
-                this.error = error
-                this.layoutFullName = undefined})
-            .finally(() => {console.log(result, 'result')})
-            })   
+        this.invokeApexMethods();
     };
-    
+
+    async invokeApexMethods() {
+        try {
+            this.layoutFullName = await getLayoutFullName({layoutId: this.layoutId});
+        } catch(error) {
+            console.error(error);
+        } finally {
+            insertInLog({layoutFullName: this.layoutFullName, userId: this.user_Id, object_c: this.layoutObject})
+            .then(result => {
+                console.log('Insert in log success', result);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+            console.log('Finally Block');
+        }
+    }
     
     @api recordId;
     @api objectApiName;

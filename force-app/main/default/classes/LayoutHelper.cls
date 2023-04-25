@@ -1,7 +1,7 @@
 public with sharing class LayoutHelper {
 
     @AuraEnabled
-    public static String getLayoutFullName(String layoutId, String userId, String object_c) {
+    public static String getLayoutFullName(String layoutId) {
         String layoutFullName;
         String UserApiVersion ='57.0';
         String query ='/tooling/sobjects/Layout/';
@@ -27,9 +27,6 @@ public with sharing class LayoutHelper {
             layoutFullName =  request.toString()  + response.toString();
             }  
           System.debug('getLayoutFullName  ' + layoutFullName);
-          System.debug('getUserId_c  ' + userId);
-          System.debug('getObject_c  ' + object_c);
-          //LogHelper.insertInLog(layoutFullName, userId, object_c);
           return layoutFullName;
         }   
         
