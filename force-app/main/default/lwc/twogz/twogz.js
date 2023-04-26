@@ -27,7 +27,7 @@ export default class Twogz extends LightningElement {
         } catch(error) {
             console.error(error);
         } finally {
-            insertInLog({layoutFullName: this.layoutFullName, userId: this.user_Id, object_c: this.layoutObject})
+            insertInLog({layoutFullName: this.layoutFullName, userId: this.user_Id, layoutObject: this.layoutObject})
             .then(result => {
                 console.log('Insert in log success', result);
             })
