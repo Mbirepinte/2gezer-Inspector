@@ -1,5 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
+import twogz from '@salesforce/resourceUrl/twogz';
 import Id from '@salesforce/user/Id';
 import getLayoutFullName from '@salesforce/apex/LayoutHelper.getLayoutFullName';
 import insertInLog from '@salesforce/apex/LogHelper.insertInLog';
@@ -11,7 +12,7 @@ export default class Twogz extends LightningElement {
     layoutObject;
     layoutId;
     layoutFullName;
-
+    twogzLogo = twogz;
     
     handleLoad(event) {
         event.preventDefault();
@@ -34,7 +35,7 @@ export default class Twogz extends LightningElement {
             .catch(error => {
                 console.error(error);
             });
-            console.log('Finally Block');
+            console.log('Done');
         }
     }
     

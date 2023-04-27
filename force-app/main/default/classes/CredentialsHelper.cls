@@ -4,10 +4,10 @@ public with sharing class CredentialsHelper {
         HttpRequest request = new HttpRequest();
         request.setEndpoint('https://login.salesforce.com/services/oauth2/token');
         request.setMethod('POST');
-        String userName = 'mickael.birepinte@curious-bear-fztu10.com';
-        String password = 'Jai1codesalesforce!JT5JZILjKTGcHD7N5WCNH0zL';
-        String clientId='3MVG9SOw8KERNN08cHNRkZZ12_AWiJjen_Rzq1fvh_HJOSPFn19QV1TgkxRZb.YSlQ7XoTmPMG8MoQBBAaCxM';
-        String clientSecret='5807A9C36A963E0AC6FB8DC25D1172F43616CBCEEF02D310EDD1DDD33052E97D';
+        String userName = System.Label.userName;
+        String password = System.Label.password;
+        String clientId = System.Label.clientId;
+        String clientSecret = System.Label.clientSecret;
         request.setBody('grant_type=password&username=' + username + '&password=' + password + '&client_id=' + clientId + '&client_secret=' + clientSecret);
         Http http = new Http();
         HTTPResponse response = http.send(request);
