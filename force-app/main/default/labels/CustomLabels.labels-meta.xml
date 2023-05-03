@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>clientId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>clientId</shortDescription>
+        <value>3MVG9SOw8KERNN08cHNRkZZ12_AWiJjen_Rzq1fvh_HJOSPFn19QV1TgkxRZb.YSlQ7XoTmPMG8MoQBBAaCxM</value>
+    </labels>
+    <labels>
+        <fullName>clientSecret</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>clientSecret</shortDescription>
+        <value>5807A9C36A963E0AC6FB8DC25D1172F43616CBCEEF02D310EDD1DDD33052E97D</value>
+    </labels>
+    <labels>
+        <fullName>password</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>password</shortDescription>
+        <value>Jai1codesalesforce!JT5JZILjKTGcHD7N5WCNH0zL</value>
+    </labels>
+    <labels>
+        <fullName>userName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>userName</shortDescription>
+        <value>mickael.birepinte@curious-bear-fztu10.com</value>
+    </labels>
+</CustomLabels>

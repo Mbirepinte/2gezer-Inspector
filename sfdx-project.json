@@ -3,13 +3,17 @@
     {
       "path": "force-app",
       "default": true,
-      "package": "2Gezer Inspector",
-      "versionName": "Version 0.1",
-      "versionNumber": "0.1.0.NEXT"
+      "package": "twogzInspector",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": "My Package"
     }
   ],
   "name": "2Gezer Inspector",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "56.0"
+  "sourceApiVersion": "56.0",
+  "packageAliases": {
+    "twogzInspector": "0Ho09000000k9wmCAA"
+  }
 }
