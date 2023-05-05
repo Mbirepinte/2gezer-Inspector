@@ -5,27 +5,27 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>clientId</shortDescription>
-        <value>3MVG9SOw8KERNN08cHNRkZZ12_AWiJjen_Rzq1fvh_HJOSPFn19QV1TgkxRZb.YSlQ7XoTmPMG8MoQBBAaCxM</value>
+        <value>3MVG90J3nJBMnqrSLRLMCjYxr2Am8Oc0gR5yKGfRFoAGT853HMADmbFKJn78WGNUaasjB8FCS5OSfIZ.Zw6zx</value>
     </labels>
     <labels>
         <fullName>clientSecret</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>clientSecret</shortDescription>
-        <value>5807A9C36A963E0AC6FB8DC25D1172F43616CBCEEF02D310EDD1DDD33052E97D</value>
+        <value>703B8844B6220985054FF4B02A7F23D8B2282BD19459BDF4CBA114D8EA2AC4CC</value>
     </labels>
     <labels>
         <fullName>password</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>password</shortDescription>
-        <value>Jai1codesalesforce!JT5JZILjKTGcHD7N5WCNH0zL</value>
+        <value>dvxvy0azQqw[mtsnylesCGabzOABYb92bfuauRyz1DdN</value>
     </labels>
     <labels>
         <fullName>userName</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>userName</shortDescription>
-        <value>mickael.birepinte@curious-bear-fztu10.com</value>
+        <value>test-kdkplhqdadjc@example.com</value>
     </labels>
 </CustomLabels>

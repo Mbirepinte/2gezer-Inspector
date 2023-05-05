@@ -18,6 +18,10 @@ public with sharing class CredentialsHelper {
         } else {
             accessToken = response.getBody();
             System.debug('Error: ' + response.getBody());
+            System.debug('username: ' + username);
+            System.debug('password: ' + password);
+            System.debug('clientId: ' + clientId);
+            System.debug('clientSecret: ' + clientSecret);
         }
         return accessToken;
         } 
