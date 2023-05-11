@@ -7,15 +7,8 @@ public with sharing class LayoutHelper {
         String query ='/tooling/sobjects/Layout/';
         
         HttpRequest request = new HttpRequest();
- /*        request.setEndpoint('callout:Tooling_API_Credential'
-        + '/services/data/v' 
-        + UserApiVersion
-        + query 
-        + layoutId
-        +''
-        ); */
-         request.setEndpoint('callout:Tooling_API_Credential'
-            //URL.getSalesforceBaseUrl().toExternalForm()
+         request.setEndpoint(
+            URL.getSalesforceBaseUrl().toExternalForm()
         + '/services/data/v' 
         + UserApiVersion
         + query 
@@ -23,10 +16,7 @@ public with sharing class LayoutHelper {
         +''
         ); 
         request.setMethod('GET');
-        //request.setHeader('Authorization', 'Bearer ' + '00D3O0000005n8L!ARMAQEQMHYLW0MtX96cxZfHcMYy9kumC1llbHS.O79RsKBrlTsltihTBCobIZl5x.1FRmifyxSWZOz_ZSIYE__trR8WvgZ4J');
-        request.setHeader('Authorization', 'Bearer ' + UserInfo.getSessionId());
-
-        //request.setHeader('Authorization', 'Bearer ' + CredentialsHelper.getCredential());
+          request.setHeader('Authorization', 'Bearer ' + CredentialsHelper.getAccessToken());
         request.setHeader('Content-Type', 'application/json');
         
         Http http = new Http();
@@ -39,7 +29,6 @@ public with sharing class LayoutHelper {
             }  
           System.debug('getLayoutFullName  ' + layoutFullName);
           return layoutFullName;
-        }   
-        
+        }      
     }
     
