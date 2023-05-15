@@ -1,6 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
-import { getRecordUi } from 'lightning/uiRecordApi';
 import twogz from '@salesforce/resourceUrl/twogz';
 import Id from '@salesforce/user/Id';
 import getLayoutFullName from '@salesforce/apex/LayoutHelper.getLayoutFullName';
@@ -39,6 +38,7 @@ export default class Twogz extends LightningElement {
             });
             console.log('Done');
             console.log('Layout Id: ' + this.layoutId);
+            console.log('Layout FullName: ' + this.layoutFullName);
         }
     }
     

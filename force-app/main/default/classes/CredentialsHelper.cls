@@ -27,8 +27,8 @@ public with sharing class CredentialsHelper {
         } 
 
         public static String getAccessToken () {
-            String clientId = '3MVG9OjW2TAjFKUvVIOtUZQmaM5b1P.XJfOHGZiJtUq6d0yy9jYtoA6SLkHwwE80_4YcXv.P19XbLiZhVEruK';
-            String clientSecret = '3E71B5FFE4B18F50C3A5A7E3F73D44F451451207C8DE52995C56FB669DA0066A';
+            String clientId = System.Label.clientId;
+            String clientSecret = System.Label.clientSecret;
             String myDomain = URL.getSalesforceBaseUrl().toExternalForm();
             String accessToken = '';
             HttpRequest request = new HttpRequest();

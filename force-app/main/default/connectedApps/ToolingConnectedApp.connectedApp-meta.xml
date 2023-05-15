@@ -4,7 +4,6 @@
     <label>ToolingConnectedApp</label>
     <oauthConfig>
         <callbackUrl>https://login.salesforce.com</callbackUrl>
-        <consumerKey>3MVG9OjW2TAjFKUvVIOtUZQmaM5b1P.XJfOHGZiJtUq6d0yy9jYtoA6SLkHwwE80_4YcXv.P19XbLiZhVEruK</consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isClientCredentialEnabled>true</isClientCredentialEnabled>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
