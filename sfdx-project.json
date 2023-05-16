@@ -2,11 +2,11 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": false,
+      "default": true,
       "package": "twogzInspector",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
-      "versionDescription": "2Gezer Inspector for reporting purposes"
+      "versionName": "Version 1.0.1",
+      "versionNumber": "1.0.1.NEXT",
+      "versionDescription": "Removed Connected App"
     }
   ],
   "name": "twogzInspector",
@@ -14,6 +14,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "56.0",
   "packageAliases": {
-    "twogzInspector": "0Ho09000000k9x6CAA"
+    "twogzInspector": "0Ho09000000k9x6CAA",
+    "twogzInspector@1.0.0-1": "04t09000000r8VxAAI"
   }
 }
