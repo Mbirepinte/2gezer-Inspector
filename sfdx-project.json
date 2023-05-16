@@ -2,18 +2,18 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
+      "default": false,
       "package": "twogzInspector",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
-      "versionDescription": "My Package"
+      "versionDescription": "2Gezer Inspector for reporting purposes"
     }
   ],
-  "name": "2Gezer Inspector",
-  "namespace": "",
+  "name": "twogzInspector",
+  "namespace": "TwogzDev",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "56.0",
   "packageAliases": {
-    "twogzInspector": "0Ho09000000k9wmCAA"
+    "twogzInspector": "0Ho09000000k9x6CAA"
   }
 }
